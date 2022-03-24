@@ -6,19 +6,17 @@ import java.time.LocalDateTime;
 public class TodoRequest {
 
     private String content;
-
-    public TodoRequest() {
-    }
-
-    public TodoRequest(String content) {
-        this.content = content;
-    }
+    private boolean clear = false;
 
     public Todo toTodo() {
-        return new Todo(content, LocalDateTime.now());
+        return new Todo(content, clear, LocalDateTime.now());
     }
 
     public String getContent() {
         return content;
+    }
+
+    public boolean isClear() {
+        return clear;
     }
 }

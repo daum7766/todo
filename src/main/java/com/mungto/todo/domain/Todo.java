@@ -1,6 +1,5 @@
 package com.mungto.todo.domain;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Todo {
@@ -11,8 +10,8 @@ public class Todo {
     private final LocalDateTime createAt;
     private final LocalDateTime updateAt;
 
-    public Todo(String content, LocalDateTime now) {
-        this(0L, content, false, now, now);
+    public Todo(String content, boolean clear, LocalDateTime now) {
+        this(0L, content, clear, now, now);
     }
 
     public Todo(long id, String content, boolean isClear, LocalDateTime createAt,
