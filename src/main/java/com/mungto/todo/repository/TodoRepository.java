@@ -32,7 +32,7 @@ public class TodoRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Todo create(final Todo todo) {
+    public long create(final Todo todo) {
         final String sql = "INSERT INTO TODO (content, clear, create_at, update_at) VALUES(?, ?, ?, ?)";
         final KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(con -> {
@@ -44,13 +44,7 @@ public class TodoRepository {
             return preparedStatement;
         }, keyHolder);
 
-        return new Todo(
-            Objects.requireNonNull(keyHolder.getKey()).longValue(),
-            todo.getContent(),
-            false,
-            todo.getCreateAt(),
-            todo.getUpdateAt()
-        );
+        return Objects.requireNonNull(keyHolder.getKey()).longValue();
     }
 
     public Todo findById(final long id) {

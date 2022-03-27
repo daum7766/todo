@@ -3,6 +3,7 @@ package com.mungto.todo.controller;
 import com.mungto.todo.dto.TodoRequest;
 import com.mungto.todo.dto.TodoResponse;
 import com.mungto.todo.service.TodoService;
+import java.net.URI;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class TodoControllerV1 {
 
     @PostMapping
     public ResponseEntity<TodoResponse> create(@RequestBody TodoRequest todoRequest) {
-        return ResponseEntity.ok(todoService.create(todoRequest));
+        return ResponseEntity.created(URI.create("/api/v1/" + todoService.create(todoRequest))).build();
     }
 
     @GetMapping("/{id}")

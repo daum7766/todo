@@ -18,10 +18,9 @@ public class TodoService {
         this.todoRepository = todoRepository;
     }
 
-    public TodoResponse create(final TodoRequest todoRequest) {
+    public long create(final TodoRequest todoRequest) {
         final Todo todoInfo = todoRequest.toTodo();
-        final Todo todo = todoRepository.create(todoInfo);
-        return TodoResponse.of(todo);
+        return todoRepository.create(todoInfo);
     }
 
     public TodoResponse findById(final long id) {
