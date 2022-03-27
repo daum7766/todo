@@ -30,7 +30,7 @@ public class TodoService {
 
     public List<TodoResponse> findAll() {
         final List<Todo> todos = todoRepository.findAll();
-        return TodoResponse.ListOf(todos);
+        return TodoResponse.listOf(todos);
     }
 
     public TodoResponse updateById(final long id, final TodoRequest todoRequest) {

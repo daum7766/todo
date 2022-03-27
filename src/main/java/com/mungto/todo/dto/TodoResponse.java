@@ -7,11 +7,14 @@ import java.util.List;
 
 public class TodoResponse {
 
-    private final long id;
-    private final String content;
-    private final boolean clear;
-    private final LocalDateTime createAt;
-    private final LocalDateTime updateAt;
+    private long id;
+    private String content;
+    private boolean clear;
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
+
+    public TodoResponse() {
+    }
 
     public TodoResponse(long id, String content, boolean clear, LocalDateTime createAt,
         LocalDateTime updateAt) {
@@ -31,7 +34,7 @@ public class TodoResponse {
             todo.getUpdateAt());
     }
 
-    public static List<TodoResponse> ListOf(List<Todo> todos) {
+    public static List<TodoResponse> listOf(List<Todo> todos) {
         List<TodoResponse> todoResponses = new ArrayList<>();
         for (Todo todo : todos) {
             todoResponses.add(TodoResponse.of(todo));
