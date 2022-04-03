@@ -1,0 +1,72 @@
+= Rest Docs API Document
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+:operation-http-request-title: Example Request
+:operation-http-response-title: Example Response
+:default-path: build/generated-snippets/todo
+
+# Todo 생성
+
+## request
+include::{default-path}/v1-create/http-request.adoc[]
+
+## response
+include::{default-path}/v1-create/http-response.adoc[]
+
+
+# Todo 읽기
+
+## request
+include::{default-path}/v1-read/http-request.adoc[]
+
+## response
+include::{default-path}/v1-read/http-response.adoc[]
+
+
+# Todo 전체읽기
+
+## request
+include::{default-path}/v1-read-all/http-request.adoc[]
+
+## response
+include::{default-path}/v1-read-all/http-response.adoc[]
+
+
+# Todo 수정
+
+## request
+include::{default-path}/v1-update/http-request.adoc[]
+
+## response
+include::{default-path}/v1-update/http-response.adoc[]
+
+
+# Todo 삭제
+
+## request
+include::{default-path}/v1-delete/http-request.adoc[]
+
+## response
+include::{default-path}/v1-delete/http-response.adoc[]
+
+
+# 없는 Todo 읽기을때
+
+## request
+include::{default-path}/v1-read-error/http-request.adoc[]
+
+## response
+include::{default-path}/v1-read-error/http-response.adoc[]
+
+
+# 없는 Todo 수정할때
+
+## request
+include::{default-path}/v1-update-error/http-request.adoc[]
+
+## response
+include::{default-path}/v1-update-error/http-response.adoc[]

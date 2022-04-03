@@ -31,6 +31,7 @@ dependencies {
     // restdocs
     implementation 'org.springframework.restdocs:spring-restdocs-restassured'
 
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 tasks.named('test') {
@@ -52,16 +53,16 @@ asciidoctor {
 
 bootJar {
     dependsOn asciidoctor
-    from ("${asciidoctor.outputDir}/html5") {
-        into 'static/docs'
+    copy {
+        from "${asciidoctor.outputDir}"
+        into 'BOOT-INF/classes/static/docs'
     }
 }
 
 task copyDocument(type: Copy) {
     dependsOn asciidoctor
-
-    from file("build/asciidoc/html5/")
-    into file("src/main/resources/static/docs")
+    from file("build/docs/asciidoc")
+    into file("src/main/resources/templates")
 }
 
 build {
